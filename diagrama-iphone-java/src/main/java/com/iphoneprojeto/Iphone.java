@@ -1,6 +1,8 @@
 package main.java.com.iphoneprojeto;
 
-public class Iphone {
+import main.java.com.iphoneprojeto.interfaces.IphoneOperator;
+
+public class Iphone implements IphoneOperator {
     private SistemaOsx sistemaOsx;
     private TouchScreen touchScreen;
     private SensorAproximacao sensorAproximacao;
@@ -29,6 +31,7 @@ public class Iphone {
         sensorAproximacao.use();
     }
 
+    @Override
     public void connectWifi() {
         wifi.connect();
     }

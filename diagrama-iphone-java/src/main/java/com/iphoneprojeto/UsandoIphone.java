@@ -3,20 +3,19 @@ package main.java.com.iphoneprojeto;
 public class UsandoIphone {
     public static void main(String[] args) {
         Iphone meuIphone = new Iphone();
-        //Ligando o iPhone e suas funcionalidades
-        meuIphone.useSistemaOsx();
-        meuIphone.useTouchScreen();
-        meuIphone.useSensorAproximacao();
-        meuIphone.connectWifi();
-        meuIphone.enableBluetooth();
-        meuIphone.useRotacaoTela();
 
-        System.out.println();
-        //quero sincronizar as minhas músicas
-        iPod iPod = new iPod();
-        iPod.useSincronizarConteudoItunes();
-
+        // quero sincronizar as minhas músicas
+        IPod ipod = new IPod(meuIphone);
+        ipod.useSincronizarConteudoItunes();
         System.out.println();
 
+        // acessando o navegador safari
+        Internet internet = new Internet(meuIphone);
+        internet.useNavegadorSafari();
+        System.out.println();
+
+        //fazendo uma ligação
+        Phone phone = new Phone(meuIphone);
+        phone.fazerChamada();
     }
 }

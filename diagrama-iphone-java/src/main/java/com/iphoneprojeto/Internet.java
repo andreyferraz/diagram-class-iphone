@@ -1,28 +1,42 @@
 package main.java.com.iphoneprojeto;
 
-public abstract class Internet {
-    private EmailHtml emailHtml;
-    private NavegadorSafari navegadorSafari;
-    private GoogleMaps googleMaps;
-    private Widgets widgets;
+import main.java.com.iphoneprojeto.interfaces.InternetOperator;
 
-    public Internet() {
-        emailHtml = new EmailHtml();
-        navegadorSafari = new NavegadorSafari();
-        googleMaps = new GoogleMaps();
-        widgets = new Widgets();
+public class Internet implements InternetOperator {
+
+    private Iphone iphone;
+
+    public Internet(Iphone iphone) {
+        this.iphone = iphone;
     }
 
     public void useEmailHtml() {
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        EmailHtml emailHtml = new EmailHtml();
         emailHtml.use();
+        
     }
     public void useNavegadorSafari() {
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        NavegadorSafari navegadorSafari = new NavegadorSafari();
         navegadorSafari.use();
     }
     public void useGoogleMaps() {
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        GoogleMaps googleMaps = new GoogleMaps();
         googleMaps.use();
     }
     public void useWidgets() {
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        Widgets widgets = new Widgets();
         widgets.use();
     }
 

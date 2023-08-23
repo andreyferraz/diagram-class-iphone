@@ -1,44 +1,60 @@
 package main.java.com.iphoneprojeto;
 
+import main.java.com.iphoneprojeto.interfaces.IpodOperator;
 
-public class iPod {
-    private SincronizarConteudoItunes sincronizarConteudoItunes;
-    private PesquisarMusicas pesquisarMusicas;
-    private ReproduzirMusicas reproduzirMusicas;
-    private AvaliarMusicas avaliarMusicas;
-    private VisualizarCapaDosAlbuns visualizarCapaDosAlbuns;
-    private ReproduzirVideos reproduzirVideos;
+public class IPod implements IpodOperator {
 
-    public iPod() {
-        sincronizarConteudoItunes = new SincronizarConteudoItunes();
-        pesquisarMusicas = new PesquisarMusicas();
-        reproduzirMusicas = new ReproduzirMusicas();
-        avaliarMusicas = new AvaliarMusicas();
-        visualizarCapaDosAlbuns = new VisualizarCapaDosAlbuns();
-        reproduzirVideos = new ReproduzirVideos();
+    private Iphone iphone;
+
+    public IPod(Iphone iphone) {
+        this.iphone = iphone;
     }
 
     public void useSincronizarConteudoItunes() {
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        SincronizarConteudoItunes sincronizarConteudoItunes = new SincronizarConteudoItunes();
         sincronizarConteudoItunes.sincronizar();
     }
 
     public void usePesquisarMusicas() {
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        PesquisarMusicas pesquisarMusicas = new PesquisarMusicas();
         pesquisarMusicas.pesquisar();
     }
     
     public void useReproduzirMusicas() {
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        ReproduzirMusicas reproduzirMusicas = new ReproduzirMusicas();
         reproduzirMusicas.reproduzir();
     }
     
     public void useAvaliarMusicas() {
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        AvaliarMusicas avaliarMusicas = new AvaliarMusicas();
         avaliarMusicas.avaliar();
     }
     
     public void useVisualizarCapaDosAlbuns() {
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        VisualizarCapaDosAlbuns visualizarCapaDosAlbuns = new VisualizarCapaDosAlbuns();
         visualizarCapaDosAlbuns.visualizar();
     }
     
     public void useReproduzirVideos() {
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        ReproduzirVideos reproduzirVideos = new ReproduzirVideos();
         reproduzirVideos.reproduzir();
     }
 

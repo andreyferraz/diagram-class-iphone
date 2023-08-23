@@ -1,78 +1,102 @@
 package main.java.com.iphoneprojeto;
 
-public class Phone {
-    private FazerChamada fazerChamada;
-    private ReceberChamada receberChamada;
-    private SincronizarContatos sincronizarContatos;
-    private ContatosFavoritos contatosFavoritos;
-    private AdicionarContato adicionarContato;
-    private RemoverContato removerContato;
-    private EditarContato editarContato;
-    private HistoricoDeLigacoes historicoDeLigacoes;
-    private GaleriaDeFotos galeriaDeFotos;
-    private AplicarZoomNaImagem aplicarZoomNaImagem;
-    private SetarImagemComoPapelDeParede setarImagemComoPapelDeParede;
-    private Calendario calendario;
-    private SMS sms;
-    private CorreioDeVoz correioDeVoz;
+import main.java.com.iphoneprojeto.interfaces.PhoneOperator;
 
-    public Phone(){
-        fazerChamada = new FazerChamada();
-        receberChamada = new ReceberChamada();
-        sincronizarContatos = new SincronizarContatos();
-        contatosFavoritos = new ContatosFavoritos();
-        adicionarContato = new AdicionarContato();
-        removerContato = new RemoverContato();
-        editarContato = new EditarContato();
-        historicoDeLigacoes = new HistoricoDeLigacoes();
-        galeriaDeFotos = new GaleriaDeFotos();
-        aplicarZoomNaImagem = new AplicarZoomNaImagem();
-        setarImagemComoPapelDeParede = new SetarImagemComoPapelDeParede();
-        calendario = new Calendario();
-        sms = new SMS();
-        correioDeVoz = new CorreioDeVoz();
+public class Phone implements PhoneOperator  {
+    private Iphone iphone;
+
+    public Phone(Iphone iphone){
+        this.iphone = iphone;
     }
 
     public void fazerChamada(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.useSensorAproximacao();
+        FazerChamada fazerChamada = new FazerChamada();
         fazerChamada.fazerChamada();
     }
     public void receberChamada(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.useSensorAproximacao();
+        ReceberChamada receberChamada = new ReceberChamada();
         receberChamada.receberChamada();
     }
     public void sincronizarContatos(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.connectWifi();
+        SincronizarContatos sincronizarContatos = new SincronizarContatos();
         sincronizarContatos.sincronizarContatos();
     }
     public void contatosFavoritos(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        ContatosFavoritos contatosFavoritos = new ContatosFavoritos();
         contatosFavoritos.contatosFavoritos();
     }
     public void adicionarContato(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        AdicionarContato adicionarContato = new AdicionarContato();
         adicionarContato.adicionarContato();
     }
     public void removerContato(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        RemoverContato removerContato = new RemoverContato();
         removerContato.removerContato();
     }
     public void editarContato(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        EditarContato editarContato = new EditarContato();
         editarContato.editarContato();
     }
     public void historicoDeLigacoes(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        HistoricoDeLigacoes historicoDeLigacoes = new HistoricoDeLigacoes();
         historicoDeLigacoes.historicoDeLigacoes();
     }
     public void galeriaDeFotos(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.useRotacaoTela();
+        GaleriaDeFotos galeriaDeFotos = new GaleriaDeFotos();
         galeriaDeFotos.galeriaDeFotos();
     }
     public void aplicarZoomNaImagem(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.useRotacaoTela();
+        AplicarZoomNaImagem aplicarZoomNaImagem = new AplicarZoomNaImagem();
         aplicarZoomNaImagem.aplicarZoomNaImagem();
     }
     public void setarImagemComoPapelDeParede(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        iphone.useRotacaoTela();
+        SetarImagemComoPapelDeParede setarImagemComoPapelDeParede = new SetarImagemComoPapelDeParede();
         setarImagemComoPapelDeParede.setarImagemComoPapelDeParede();
     }
     public void calendario(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        Calendario calendario = new Calendario();
         calendario.calendario();
     }
     public void sms(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        SMS sms = new SMS();
         sms.sms();
     }
     public void correioDeVoz(){
+        iphone.useSistemaOsx();
+        iphone.useTouchScreen();
+        CorreioDeVoz correioDeVoz = new CorreioDeVoz();
         correioDeVoz.correioDeVoz();
     }
 
