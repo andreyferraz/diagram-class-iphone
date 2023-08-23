@@ -53,6 +53,7 @@ public class IPod implements IpodOperator {
     public void useReproduzirVideos() {
         iphone.useSistemaOsx();
         iphone.useTouchScreen();
+        iphone.useRotacaoTela();
         iphone.connectWifi();
         ReproduzirVideos reproduzirVideos = new ReproduzirVideos();
         reproduzirVideos.reproduzir();
